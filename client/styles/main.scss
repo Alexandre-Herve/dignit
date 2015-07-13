@@ -1,0 +1,59 @@
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+
+.list {
+    padding-top: 0px;
+}
+
+.item {
+    white-space: initial;
+    padding: 0px;
+    margin-top: 10px;
+    .item-body {
+        margin-top: 10px;
+        padding: 10px;
+    }
+    .item-footer {
+        padding: 13px;
+        background-color: rgba(0, 0, 0, 0.02);
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        flex-direction: row;
+        justify-content: space-between;
+        -webkit-justify-content: space-between; /* Safari 6.1+ */
+        div {
+            -webkit-flex-basis: 50%;
+            flex-basis: 50%;
+            span {
+                padding: 4px;
+            }
+            &.vote {
+                text-align: left;
+            }
+            &.opposition {
+                text-align: center;
+            }
+            &.status {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.background-royal {
+    background-color: $royal;
+    color: white;
+}
+
+.background-balanced {
+    background-color: $balanced;
+    color: white;
+}
+
+.background-energized {
+    background-color: $energized;
+    color: white;
+}
+

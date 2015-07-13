@@ -1,0 +1,33 @@
+<template name="home">
+    {{#contentFor "headerButtonLeft"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">{{ watchee.name }}</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+      {{#ionContent}}
+          {{#ionList class="my-class padding"}}
+            {{#each items}}
+            {{#ionItem}}
+            <div class="item-body">
+                    {{body}}
+                    <a href="{{refResource}}">Resource</a> / <a href="{{refScrutin}}">Scrutin</a>
+                </div>
+                  <div class="item-footer item-footer-{{getVoteClass vote}}">
+                      <div class="vote">
+                          <span class="background-{{getVoteClass vote}}">{{getVoteText vote}}</span>
+                      </div>
+                      <div class="status {{getStatusClass status}}">
+                          {{getStatusText status}}
+                          <span class="{{getNumbersClass pro con}}">{{pro}}</span> / {{totalVoters pro con}}
+                      </div>
+                  </div>
+                {{/ionItem}}
+            {{/each}}
+          {{/ionList}}
+      {{/ionContent}}
+    {{/ionView}}
+</template>
+
