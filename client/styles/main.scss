@@ -1,59 +1,83 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 
+$nightBlue: #070239;
+$diYellow: #E8FF00;
+
+
 .list {
     padding-top: 0px;
 }
 
+.bar.bar-stable {
+    background-color: $nightBlue;
+    background-image: linear-gradient(0deg, $nightBlue, $nightBlue, 50%, transparent 50%);
+    h1.title {
+        border: 0;
+        color: $diYellow;
+    }
+}
+
 .item {
     white-space: initial;
-    padding: 0px;
+    color: $nightBlue;
+    padding: 15px;
     margin-top: 10px;
-    .item-body {
-        margin-top: 10px;
-        padding: 10px;
-    }
-    .item-footer {
-        padding: 13px;
-        background-color: rgba(0, 0, 0, 0.02);
-        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-        display: -ms-flexbox;      /* TWEENER - IE 10 */
-        display: -webkit-flex;     /* NEW - Chrome */
-        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    border: 0;
+    box-shadow: 0px 1px 3px 1px rgba(6,1,56,0.21);
+    -webkit-box-shadow: 0px 1px 3px 1px rgba(6,1,56,0.21);
+    -moz-box-shadow: 0px 1px 3px 1px rgba(6,1,56,0.21);
+    border-radius: 3px;
+    .item-user {
+        height: 50px;
+        display: flex;
+        margin-bottom: 20px;
         flex-direction: row;
-        justify-content: space-between;
-        -webkit-justify-content: space-between; /* Safari 6.1+ */
-        div {
-            -webkit-flex-basis: 50%;
-            flex-basis: 50%;
-            span {
-                padding: 4px;
+        .user-avatar {
+            margin-right: 10px;
+            img {
+                $imageWidth: 50px;
+                border-radius: $imageWidth / 2;
+                height: $imageWidth;
+                width: $imageWidth;
             }
-            &.vote {
-                text-align: left;
+        }
+        .infos {
+            h2 {
+                font-size: 16px;
+                font-weight: bold;
             }
-            &.opposition {
-                text-align: center;
+            small {
+                font-size: 12px;
             }
-            &.status {
-                text-align: right;
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    .item-body {
+        font-weight: 200;
+        padding: 0;
+        .votes {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
 }
 
-.background-royal {
-    background-color: $royal;
-    color: white;
+.tabs-striped.tabs-positive .tabs,
+.tabs-positive > .tabs,
+.tabs.tabs-positive {
+    border-color: $nightBlue;
+    background-color: $nightBlue; 
+    background-image: none;
+    a.tab-item {
+        color: $diYellow;
+        display: flex;
+        flex-direction: column;
+        flex-align: center;
+        justify-content: center;
+        &.active {
+            border-bottom: 3px solid $diYellow;
+        }
+    }
 }
-
-.background-balanced {
-    background-color: $balanced;
-    color: white;
-}
-
-.background-energized {
-    background-color: $energized;
-    color: white;
-}
-

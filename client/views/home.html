@@ -3,27 +3,36 @@
     {{/contentFor}}
 
     {{#contentFor "headerTitle"}}
-        <h1 class="title">{{ watchee.name }}</h1>
+        <h1 class="title">dIGNIT</h1>
     {{/contentFor}}
+
+    {{#ionTabs class="tabs-positive tabs-icon-top" style="android"}}
+      {{> ionTab title="Home" path="news"}}
+      {{> ionTab title="Amis" path="todos"}}
+      {{> ionTab title="Profile" path="profile"}}
+    {{/ionTabs}}
 
     {{#ionView}}
       {{#ionContent}}
           {{#ionList class="my-class padding"}}
             {{#each items}}
-            {{#ionItem}}
-            <div class="item-body">
-                    {{body}}
-                    <a href="{{refResource}}">Resource</a> / <a href="{{refScrutin}}">Scrutin</a>
-                </div>
-                  <div class="item-footer item-footer-{{getVoteClass vote}}">
-                      <div class="vote">
-                          <span class="background-{{getVoteClass vote}}">{{getVoteText vote}}</span>
-                      </div>
-                      <div class="status {{getStatusClass status}}">
-                          {{getStatusText status}}
-                          <span class="{{getNumbersClass pro con}}">{{pro}}</span> / {{totalVoters pro con}}
-                      </div>
-                  </div>
+                {{#ionItem}}
+                    <div class="item-user">
+                        <div class="user-avatar">
+                            <img src="http://placehold.it/50x50">
+                        </div>
+                        <div class="infos">
+                            <h2>{{ author }}</h2>
+                            <small>11 juin à 13:30</small>
+                        </div>
+                    </div>
+                    <div class="item-body">
+                        {{ text }}
+                        <div class="votes">
+                            {{ upVotes }} - {{ downVotes }}
+                        </div>
+                        <a href={{ link }} class="item-link"><small>{{ link }}</small></a>
+                    </div>
                 {{/ionItem}}
             {{/each}}
           {{/ionList}}
